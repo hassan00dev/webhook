@@ -1,7 +1,11 @@
 #!/bin/bash
 
 sudo apt update
-sudo apt install -y nodejs npm
+
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+nvm install 22
+node -v
+nvm current
 
 cd ~/webhook
 npm install express

@@ -11,7 +11,7 @@ app.post('/webhook', (req, res) => {
     console.log('Webhook received:', req.body);
 
     // Run the deploy.sh file
-    exec('./deploy.sh', (error, stdout, stderr) => {
+    exec('~/webhook/deploy.sh', (error, stdout, stderr) => {
         if (error) {
             console.error(`Error executing deploy.sh: ${error.message}`);
             return res.status(500).send(`Deployment failed: ${error.message}`);
